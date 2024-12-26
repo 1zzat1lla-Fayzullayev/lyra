@@ -8,9 +8,6 @@
   font-family: "Poppins", serif;
 }
 
-body {
-  background-color: #000000;
-}
 .burger {
   cursor: pointer;
   position: relative;
