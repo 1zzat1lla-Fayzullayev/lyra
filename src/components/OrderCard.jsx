@@ -18,7 +18,7 @@ const Card = () => {
       {orderData.map((order) => (
         <div
           key={order.level}
-          className="max-w-[370px] min-h-[600px] flex flex-col items-start bg-white p-6 border-[1px] border-slate-300 rounded-xl shadow-md"
+          className="max-w-[370px] h-full md:min-h-[600px] flex flex-col items-start bg-white p-6 border-[1px] border-slate-300 rounded-xl shadow-md"
         >
           <span className="font-[700] text-[25px]">{order.level}</span>
           <p className="mt-[10px] text-[16px] text-slate-600">{order.info}</p>
@@ -42,7 +42,7 @@ const Card = () => {
               <img src="/check.svg" alt="check icon" /> <span>{order.list5}</span>
             </div>
           </div>
-          <button className="bg-black text-white w-full rounded-[5px] py-[10px] mt-auto transition-all ease-in-out hover:scale-[1.02]">
+          <button className="bg-black text-white w-full rounded-[5px] py-[10px] transition-all ease-in-out hover:scale-[1.02] mt-[20px]">
             Tanlash
           </button>
         </div>
