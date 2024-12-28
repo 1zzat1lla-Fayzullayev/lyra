@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import OrderCard from "./OrderCard";
 
-function Orders() {
+function Orders({handleOpenModal}) {
   return (
     <>
       <div className="mx-[20px] xl:mx-0">
@@ -10,7 +11,7 @@ function Orders() {
             Lyra bilan orzuingizdagi veb-saytni yarating ✨
           </p>
         </div>
-        <OrderCard />
+        <OrderCard handleOpenModal={handleOpenModal}/>
       </div>
     </>
   );

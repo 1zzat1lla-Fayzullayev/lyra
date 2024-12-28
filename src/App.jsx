@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Orders from "./components/Orders";
 import Stats from "./components/Stats";
 import OrderModal from "./components/OrderModal";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const [openOrderModal, setOpenOrderModal] = useState(false);
@@ -18,11 +19,18 @@ function App() {
   return (
     <>
       <Navbar handleOpenModal={handleOpenModal} />
-      <Header handleOpenModal={handleOpenModal}/>
+      <Header handleOpenModal={handleOpenModal} />
       <Stats />
-      <Orders />
+      <Orders handleOpenModal={handleOpenModal} />
 
-      {openOrderModal && <OrderModal handleCloseModal={handleCloseModal} openOrderModal={openOrderModal} />}
+      {openOrderModal && (
+        <OrderModal
+          handleCloseModal={handleCloseModal}
+          openOrderModal={openOrderModal}
+        />
+      )}
+
+      <Toaster position="top-center" reverseOrder={false} />
     </>
   );
 }

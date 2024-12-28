@@ -1,18 +1,19 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import { orderData } from "../data/orderCardData";
 
-const OrderCard = () => {
+const OrderCard = ({handleOpenModal}) => {
   return (
     <section className="py-10">
       <div className="mx-auto flex items-center flex-wrap justify-center gap-[30px] w-fit">
-        <Card />
+        <Card handleOpenModal={handleOpenModal}/>
       </div>
     </section>
   );
 };
 
-const Card = () => {
+const Card = ({handleOpenModal}) => {
   return (
     <>
       {orderData.map((order) => (
@@ -42,8 +43,8 @@ const Card = () => {
               <img src="/check.svg" alt="check icon" /> <span>{order.list5}</span>
             </div>
           </div>
-          <button className="bg-black text-white w-full rounded-[5px] py-[10px] transition-all ease-in-out hover:scale-[1.02] mt-[20px]">
-            Tanlash
+          <button className="bg-black text-white w-full rounded-[5px] py-[10px] transition-all ease-in-out hover:scale-[1.02] mt-[20px]" onClick={handleOpenModal}>
+            Buyurtma berish
           </button>
         </div>
       ))}

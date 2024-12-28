@@ -1,9 +1,58 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
+
+import axios from "axios";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 function OrderModal({ handleCloseModal, openOrderModal }) {
   const stopPropagation = (e) => {
     e.stopPropagation();
   };
+
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [telegramUsername, setTelegramUsername] = useState("");
+
+  const TOKEN = "7639050553:AAFBHv65ZAng6ChiEJXKy9Lm5IO0SAR9MFo";
+  const USER_ID = "6475396776";
+
+  const encodeText = (text) => encodeURIComponent(text);
+
+  const sendMessage = async (e) => {
+    e.preventDefault();
+    const text = `Ism: ${name}\nTelegram username: ${telegramUsername}\nTelefon raqam: ${phone}`;
+  
+    if (!name || !telegramUsername || !phone) {
+      toast.error("Barcha maydonni to'ldiring!");
+      return;
+    }
+  
+    const usernameRegex = /^@/;
+    if (!usernameRegex.test(telegramUsername)) {
+      toast.error(
+        "Telegram username '@lyra_uz' ko'rinishda bo'lishi kerak!"
+      );
+      return;
+    }
+  
+    try {
+      await axios.post(
+        `https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${USER_ID}&text=${encodeText(
+          text
+        )}`
+      );
+      toast.success("Muvaffaqiyatli! \nTez orada siz bilan bog'lanamiz");
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setName("");
+      setTelegramUsername("");
+      setPhone("");
+      handleCloseModal();
+    }
+  };
+  
 
   return (
     <>
@@ -17,7 +66,6 @@ function OrderModal({ handleCloseModal, openOrderModal }) {
           onClick={stopPropagation}
           style={{
             animation: openOrderModal && "fadeIn 0.3s ease-out forwards",
-            
           }}
         >
           <img
@@ -34,19 +82,31 @@ function OrderModal({ handleCloseModal, openOrderModal }) {
                 type="text"
                 className="w-full border border-slate-300 rounded-[5px] py-2 px-3"
                 placeholder="Ismingiz"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
               <input
                 type="text"
                 className="w-full border border-slate-300 rounded-[5px] py-2 px-3"
                 placeholder="Telegram username"
+                required
+                value={telegramUsername}
+                onChange={(e) => setTelegramUsername(e.target.value)}
               />
               <input
                 type="number"
                 className="w-full border border-slate-300 rounded-[5px] py-2 px-3"
                 placeholder="Nomeringiz"
+                required
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
               />
             </div>
-            <button className="bg-black text-white w-full rounded-[5px] py-[10px] transition-all ease-in-out hover:scale-[1.02] mb-[20px]">
+            <button
+              className="bg-black text-white w-full rounded-[5px] py-[10px] transition-all ease-in-out hover:scale-[1.02] mb-[20px]"
+              onClick={sendMessage}
+            >
               Yuborish
             </button>
           </div>
