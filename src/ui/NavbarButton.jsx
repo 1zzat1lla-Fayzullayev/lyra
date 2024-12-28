@@ -1,7 +1,9 @@
-function NavbarButton() {
+/* eslint-disable react/prop-types */
+function NavbarButton({ handleOpenModal }) {
   return (
     <>
       <button
+        onClick={handleOpenModal}
         className='
           relative z-0 flex items-center gap-2 overflow-hidden whitespace-nowrap rounded-lg border-[1px] 
           border-neutral-700 px-4 py-1.5 font-medium

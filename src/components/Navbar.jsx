@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import Wrapper from "../layout/Wrapper";
 import NavbarButton from "../ui/NavbarButton";
 
-function Navbar() {
+function Navbar({ handleOpenModal }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -16,7 +17,7 @@ function Navbar() {
           <a href="#">Asosiy</a>
           <a href="#">Biz Haqimizda</a>
           <a href="#">Loyihalar</a>
-          <NavbarButton />
+          <NavbarButton handleOpenModal={handleOpenModal}/>
         </div>
 
         <div
@@ -31,7 +32,9 @@ function Navbar() {
         {/* Menu */}
         <div
           className={`absolute left-0 top-16 w-full bg-neutral-900 text-center rounded-lg border border-neutral-700 lg:hidden transition-all duration-300 ease-in-out transform ${
-            menuOpen ? "scale-100 opacity-100" : "scale-75 opacity-0 pointer-events-none"
+            menuOpen
+              ? "scale-100 opacity-100"
+              : "scale-75 opacity-0 pointer-events-none"
           }`}
         >
           <a
