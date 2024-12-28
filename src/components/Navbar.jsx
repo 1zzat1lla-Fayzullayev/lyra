@@ -13,9 +13,9 @@ function Navbar() {
         </div>
 
         <div className="hidden lg:flex items-center gap-[25px]">
-          <a href="#">Home</a>
-          <a href="#">About Us</a>
-          <a href="#">Projects</a>
+          <a href="#">Asosiy</a>
+          <a href="#">Biz Haqimizda</a>
+          <a href="#">Loyihalar</a>
           <NavbarButton />
         </div>
 
@@ -38,19 +38,19 @@ function Navbar() {
             href="#"
             className="block px-4 py-2 border-b border-neutral-700 text-neutral-300 hover:bg-neutral-800"
           >
-            Home
+            Asosiy
           </a>
           <a
             href="#"
             className="block px-4 py-2 border-b border-neutral-700 text-neutral-300 hover:bg-neutral-800"
           >
-            About Us
+            Biz Haqimizda
           </a>
           <a
             href="#"
             className="block px-4 py-2 text-neutral-300 hover:bg-neutral-800"
           >
-            Projects
+            Loyihalar
           </a>
         </div>
       </nav>

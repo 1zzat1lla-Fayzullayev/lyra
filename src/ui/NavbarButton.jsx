@@ -18,7 +18,7 @@ function NavbarButton() {
           hover:before:translate-y-[0%]
           active:scale-100'
       >
-        Zakaz
+        Buyurtma berish
       </button>
     </>
   );
