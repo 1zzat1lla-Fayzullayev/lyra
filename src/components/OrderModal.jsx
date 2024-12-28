@@ -8,16 +8,16 @@ function OrderModal({ handleCloseModal, openOrderModal }) {
   return (
     <>
       <div
-        className="fixed inset-0 top-0 right-0 bg-[#000000c9] z-[9999] flex justify-center items-center"
+        className="fixed inset-0 top-0 right-0 bg-[#00000057] z-[9999] flex justify-center items-center"
         onClick={handleCloseModal}
+        style={{ backdropFilter: "blur(10px)" }}
       >
         <div
-          className="fixed max-w-[350px] px-[20px] w-full rounded-[10px] min-h-[300px] z-[99999] bg-white mx-auto flex justify-center transform scale-95 opacity-0 transition-all duration-300"
+          className="fixed max-w-[350px] px-[20px] w-full rounded-[10px] min-h-[300px] z-[99999] bg-[#ffffff] mx-auto flex justify-center transform scale-95 opacity-0 transition-all"
           onClick={stopPropagation}
           style={{
-            animation: openOrderModal
-              ? "fadeIn 0.3s ease-out forwards"
-              : "fadeOut 0.3s ease-in forwards",
+            animation: openOrderModal && "fadeIn 0.3s ease-out forwards",
+            
           }}
         >
           <img

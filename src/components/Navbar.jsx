@@ -40,18 +40,21 @@ function Navbar({ handleOpenModal }) {
           <a
             href="#"
             className="block px-4 py-2 border-b border-neutral-700 text-neutral-300 hover:bg-neutral-800"
+            onClick={() => setMenuOpen(false)}
           >
             Asosiy
           </a>
           <a
             href="#"
             className="block px-4 py-2 border-b border-neutral-700 text-neutral-300 hover:bg-neutral-800"
+            onClick={() => setMenuOpen(false)}
           >
             Biz Haqimizda
           </a>
           <a
             href="#"
             className="block px-4 py-2 text-neutral-300 hover:bg-neutral-800"
+            onClick={() => setMenuOpen(false)}
           >
             Loyihalar
           </a>
