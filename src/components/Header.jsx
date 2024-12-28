@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
 import { motion } from "framer-motion";
-import HeaderText from "../ui/HeaderText";
 
 const Header = () => {
   return (
@@ -35,10 +34,9 @@ const FuzzyOverlay = () => {
 const ExampleContent = () => {
   return (
     <div className="relative grid h-screen place-content-center space-y-6 bg-neutral-950 p-8">
-      {/* <p className="text-center text-3xl md:text-6xl font-black text-neutral-50">
+      <p className="text-center text-3xl md:text-6xl font-black text-neutral-50">
       Professional Saytlar Uchun Ishonchli Hamkor
-      </p> */}
-      <HeaderText/>
+      </p>
       <p className="text-center text-neutral-400">
         G'oyalaringizni raqamli haqiqatga aylantiring ✨
       </p>
