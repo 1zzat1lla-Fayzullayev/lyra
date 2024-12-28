@@ -26,7 +26,7 @@ const StatCard = ({ label, end }) => {
   useEffect(() => {
     let start = 0;
     const duration = 2000;
-    const increment = Math.ceil(end / (duration / 50));
+    const increment = Math.ceil(end / (duration / 40));
 
     const counter = setInterval(() => {
       start += increment;
@@ -36,7 +36,7 @@ const StatCard = ({ label, end }) => {
       } else {
         setValue(start);
       }
-    }, 50);
+    }, 60);
 
     return () => clearInterval(counter);
   }, [end]);
