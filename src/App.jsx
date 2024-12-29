@@ -5,6 +5,7 @@ import Orders from "./components/Orders";
 import Stats from "./components/Stats";
 import OrderModal from "./components/OrderModal";
 import { Toaster } from "react-hot-toast";
+import Footer from "./components/Footer";
 
 function App() {
   const [openOrderModal, setOpenOrderModal] = useState(false);
@@ -22,6 +23,7 @@ function App() {
       <Header handleOpenModal={handleOpenModal} />
       <Stats />
       <Orders handleOpenModal={handleOpenModal} />
+      <Footer />
 
       {openOrderModal && (
         <OrderModal

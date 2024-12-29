@@ -47,7 +47,7 @@ function OrderModal({ handleCloseModal, openOrderModal }) {
     const text = `Ism: ${name}\nTelegram username: ${telegramUsername}\nTelefon raqam: ${phone}`;
 
     if (!name || !telegramUsername || !phoneValidate.test(phone)) {
-      toast.error("Barcha maydonni to'ldiring va telefon raqamni to'g'ri kiriting!");
+      toast.error("Barcha maydonni to'ldiring!");
       return;
     }
 
@@ -108,7 +108,7 @@ function OrderModal({ handleCloseModal, openOrderModal }) {
           onClick={handleCloseModal}
         />
         <div className="flex flex-col items-center">
-          <h2 className="font-[700] text-[20px] mt-[5px]">
+          <h2 className="font-[600] text-[20px] mt-[5px]">
             Buyurtma berish uchun
           </h2>
           <div className="flex flex-col gap-3 justify-center items-center my-auto">
