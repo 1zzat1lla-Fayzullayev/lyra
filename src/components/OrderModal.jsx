@@ -38,7 +38,7 @@ function OrderModal({ handleCloseModal, openOrderModal }) {
   const [telegramUsername, setTelegramUsername] = useState("");
 
   const TOKEN = "7639050553:AAFBHv65ZAng6ChiEJXKy9Lm5IO0SAR9MFo";
-  const USER_ID = "6475396776";
+  const USERID = "-1002315423349";
 
   const encodeText = (text) => encodeURIComponent(text);
 
@@ -46,7 +46,7 @@ function OrderModal({ handleCloseModal, openOrderModal }) {
     e.preventDefault();
     const text = `Ism: ${name}\nTelegram username: ${telegramUsername}\nTelefon raqam: ${phone}`;
 
-    if (!name || !telegramUsername || !phoneValidate.test(phone)) {
+    if (!name || !telegramUsername || !phone) {
       toast.error("Barcha maydonni to'ldiring!");
       return;
     }
@@ -59,7 +59,7 @@ function OrderModal({ handleCloseModal, openOrderModal }) {
 
     try {
       await axios.post(
-        `https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${USER_ID}&text=${encodeText(
+        `https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${USERID}&text=${encodeText(
           text
         )}`
       );
@@ -77,17 +77,16 @@ function OrderModal({ handleCloseModal, openOrderModal }) {
 
   const handlePhoneChange = (e) => {
     const input = e.target.value;
-  
+
     const rawDigits = input.replace(/\D/g, "");
-  
+
     if (rawDigits.length <= 3) {
       setPhone("+998 ");
       return;
     }
-  
+
     setPhone(formatPhoneNumber(rawDigits));
   };
-  
 
   return (
     <div
