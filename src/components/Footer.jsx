@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Wrapper from "../layout/Wrapper";
 
 function Footer() {
@@ -10,19 +11,19 @@ function Footer() {
           <div className="mx-[20px] xl:mx-0 py-[20px] border-b-[2px] border-b-[#2e2d2da8] flex md:items-center md:justify-between flex-col md:flex-row">
             <ul className="flex flex-col gap-4">
               <li>
-                <a href="#" className="text-[20px] transition-all ease-in-out hover:text-[#ffffff83]">
+                <Link to={"/"} className="text-[20px] transition-all ease-in-out hover:text-[#ffffff83]">
                   Asosiy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-[20px] transition-all ease-in-out hover:text-[#ffffff83]">
+                <Link to={"/about"} className="text-[20px] transition-all ease-in-out hover:text-[#ffffff83]">
                   Biz Haqimizda
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-[20px] transition-all ease-in-out hover:text-[#ffffff83]">
+                <Link to={"/projects"} className="text-[20px] transition-all ease-in-out hover:text-[#ffffff83]">
                   Loyihalar
-                </a>
+                </Link>
               </li>
             </ul>
             <div className="pt-[20px]">
