@@ -29,7 +29,7 @@ function Footer() {
               <img src="/Lyra_org.png" className="max-w-[222px] sm:max-w-[333px] md:max-w-[444px]" />
             </div>
           </div>
-          <div className="pt-[10px] text-center text-sm text-neutral-500">
+          <div className="py-[10px] text-center text-sm text-neutral-500">
             <p>Barcha huquqlar himoyalangan © {currentYear}</p>
           </div>
         </Wrapper>
