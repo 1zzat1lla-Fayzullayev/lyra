@@ -10,6 +10,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./layout/Home";
 import AboutPage from "./pages/AboutPage";
 import ProjectsPage from "./pages/ProjectsPage";
+import ScrollTop from "./components/ScrollTop";
 
 function App() {
   const [openOrderModal, setOpenOrderModal] = useState(false);
@@ -25,6 +26,7 @@ function App() {
     <>
       <BrowserRouter>
         <Navbar handleOpenModal={handleOpenModal} />
+        <ScrollTop />
         <Routes>
           <Route
             path="/"

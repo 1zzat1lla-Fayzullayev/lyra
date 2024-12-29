@@ -8,6 +8,10 @@
   font-family: "Poppins", serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .burger {
   cursor: pointer;
   position: relative;
