@@ -1,11 +1,15 @@
 import { useState } from "react";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import Navbar from "./components/Navbar";
-import Orders from "./components/Orders";
-import Stats from "./components/Stats";
+// import Orders from "./components/Orders";
+// import Stats from "./components/Stats";
 import OrderModal from "./components/OrderModal";
 import { Toaster } from "react-hot-toast";
 import Footer from "./components/Footer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./layout/Home";
+import AboutPage from "./pages/AboutPage";
+import ProjectsPage from "./pages/ProjectsPage";
 
 function App() {
   const [openOrderModal, setOpenOrderModal] = useState(false);
@@ -19,11 +23,18 @@ function App() {
   };
   return (
     <>
-      <Navbar handleOpenModal={handleOpenModal} />
-      <Header handleOpenModal={handleOpenModal} />
-      <Stats />
-      <Orders handleOpenModal={handleOpenModal} />
-      <Footer />
+      <BrowserRouter>
+        <Navbar handleOpenModal={handleOpenModal} />
+        <Routes>
+          <Route
+            path="/"
+            element={<Home handleOpenModal={handleOpenModal} />}
+          />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
 
       {openOrderModal && (
         <OrderModal

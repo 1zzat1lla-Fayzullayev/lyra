@@ -12,7 +12,7 @@ const Header = ({handleOpenModal}) => {
   );
 };
 
-const FuzzyOverlay = () => {
+export const FuzzyOverlay = () => {
   return (
     <motion.div
       initial={{ transform: "translateX(-10%) translateY(-10%)" }}
@@ -40,7 +40,7 @@ const ExampleContent = ({handleOpenModal}) => {
       Professional Saytlar Uchun Ishonchli Hamkor
       </p>
       <p className="text-center text-neutral-400">
-        G'oyalaringizni raqamli haqiqatga aylantiring ✨
+      Lyra – bu ishonch, sifat va muvaffaqiyat ramzi.✨
       </p>
       <div className="flex items-center justify-center gap-3">
         <button className="text-neutral-20 w-fit px-4 py-2 font-semibold text-neutral-200 transition-colors hover:bg-neutral-800">

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Wrapper from "../layout/Wrapper";
 import NavbarButton from "../ui/NavbarButton";
+import { Link } from "react-router-dom";
 
 function Navbar({ handleOpenModal }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,15 +10,15 @@ function Navbar({ handleOpenModal }) {
   return (
     <Wrapper>
       <nav className="fixed left-1/2 top-8 flex lg:w-fit z-[999] w-[90%] -translate-x-1/2 items-center gap-6 rounded-lg border border-neutral-700 justify-between bg-neutral-900 p-3 text-sm text-neutral-500">
-        <div className="logo">
+        <Link to={"/"} className="logo cursor-pointer">
           <img src="/Lyra_org.png" alt="" className="w-[60px]" />
-        </div>
+        </Link>
 
         <div className="hidden lg:flex items-center gap-[25px]">
-          <a href="#">Asosiy</a>
-          <a href="#">Biz Haqimizda</a>
-          <a href="#">Loyihalar</a>
-          <NavbarButton handleOpenModal={handleOpenModal}/>
+          <Link to={"/"}>Asosiy</Link>
+          <Link to={"/about"}>Biz Haqimizda</Link>
+          <Link to={"/projects"}>Loyihalar</Link>
+          <NavbarButton handleOpenModal={handleOpenModal} />
         </div>
 
         <div
@@ -37,27 +38,27 @@ function Navbar({ handleOpenModal }) {
               : "scale-75 opacity-0 pointer-events-none"
           }`}
         >
-          <a
-            href="#"
+          <Link
+            to={"/"}
             className="block px-4 py-2 border-b border-neutral-700 text-neutral-300 hover:bg-neutral-800"
             onClick={() => setMenuOpen(false)}
           >
             Asosiy
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to={"/about"}
             className="block px-4 py-2 border-b border-neutral-700 text-neutral-300 hover:bg-neutral-800"
             onClick={() => setMenuOpen(false)}
           >
             Biz Haqimizda
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to={"/projects"}
             className="block px-4 py-2 text-neutral-300 hover:bg-neutral-800"
             onClick={() => setMenuOpen(false)}
           >
             Loyihalar
-          </a>
+          </Link>
         </div>
       </nav>
     </Wrapper>
