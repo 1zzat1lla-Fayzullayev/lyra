@@ -2,11 +2,12 @@
 /* eslint-disable react/prop-types */
 
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
-const Header = ({handleOpenModal}) => {
+const Header = ({ handleOpenModal }) => {
   return (
     <div className="relative overflow-hidden">
-      <ExampleContent handleOpenModal={handleOpenModal}/>
+      <ExampleContent handleOpenModal={handleOpenModal} />
       <FuzzyOverlay />
     </div>
   );
@@ -33,20 +34,25 @@ export const FuzzyOverlay = () => {
   );
 };
 
-const ExampleContent = ({handleOpenModal}) => {
+const ExampleContent = ({ handleOpenModal }) => {
   return (
     <div className="relative grid h-screen place-content-center space-y-6 bg-neutral-950 p-8">
       <p className="text-center text-3xl md:text-6xl font-black text-neutral-50">
-      Professional Saytlar Uchun Ishonchli Hamkor
+        Professional Saytlar Uchun Ishonchli Hamkor
       </p>
       <p className="text-center text-neutral-400">
-      Lyra – bu ishonch, sifat va muvaffaqiyat ramzi.✨
+        Lyra – bu ishonch, sifat va muvaffaqiyat ramzi.✨
       </p>
       <div className="flex items-center justify-center gap-3">
-        <button className="text-neutral-20 w-fit px-4 py-2 font-semibold text-neutral-200 transition-colors hover:bg-neutral-800">
-          Loyihalar
-        </button>
-        <button className="w-fit bg-neutral-200 px-4 py-2 font-semibold text-neutral-700 transition-colors hover:bg-neutral-50" onClick={handleOpenModal}>
+        <Link to={"/projects"}>
+          <button className="text-neutral-20 w-fit px-4 py-2 font-semibold text-neutral-200 transition-colors hover:bg-neutral-800">
+            Loyihalar
+          </button>
+        </Link>
+        <button
+          className="w-fit bg-neutral-200 px-4 py-2 font-semibold text-neutral-700 transition-colors hover:bg-neutral-50"
+          onClick={handleOpenModal}
+        >
           Sinab ko'ring
         </button>
       </div>
