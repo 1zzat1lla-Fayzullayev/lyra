@@ -2,10 +2,11 @@
 import { useState } from "react";
 import Wrapper from "../layout/Wrapper";
 import NavbarButton from "../ui/NavbarButton";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar({ handleOpenModal }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <Wrapper>
@@ -15,9 +16,30 @@ function Navbar({ handleOpenModal }) {
         </Link>
 
         <div className="hidden lg:flex items-center gap-[25px]">
-          <Link to={"/"}>Asosiy</Link>
-          <Link to={"/about"}>Biz Haqimizda</Link>
-          <Link to={"/projects"}>Loyihalar</Link>
+          <Link
+            to={"/"}
+            className={`transition-all ease-in hover:text-white ${
+              location.pathname === "/" ? "active" : ""
+            }`}
+          >
+            Asosiy
+          </Link>
+          <Link
+            to={"/about"}
+            className={`transition-all ease-in hover:text-white ${
+              location.pathname === "/about" ? "active" : ""
+            }`}
+          >
+            Biz Haqimizda
+          </Link>
+          <Link
+            to={"/projects"}
+            className={`transition-all ease-in hover:text-white ${
+              location.pathname === "/projects" ? "active" : ""
+            }`}
+          >
+            Loyihalar
+          </Link>
           <NavbarButton handleOpenModal={handleOpenModal} />
         </div>
 
@@ -40,21 +62,21 @@ function Navbar({ handleOpenModal }) {
         >
           <Link
             to={"/"}
-            className="block px-4 py-2 border-b border-neutral-700 text-neutral-300 hover:bg-neutral-800"
+            className={`block px-4 py-2 border-b border-neutral-700 text-neutral-300 hover:bg-neutral-800 ${location.pathname === "/" ? "active" : ""}`}
             onClick={() => setMenuOpen(false)}
           >
             Asosiy
           </Link>
           <Link
             to={"/about"}
-            className="block px-4 py-2 border-b border-neutral-700 text-neutral-300 hover:bg-neutral-800"
+            className={`block px-4 py-2 border-b border-neutral-700 text-neutral-300 hover:bg-neutral-800 ${location.pathname === "/about" ? "active" : ""}`}
             onClick={() => setMenuOpen(false)}
           >
             Biz Haqimizda
           </Link>
           <Link
             to={"/projects"}
-            className="block px-4 py-2 text-neutral-300 hover:bg-neutral-800"
+            className={`block px-4 py-2 border-b border-neutral-700 text-neutral-300 hover:bg-neutral-800 ${location.pathname === "/projects" ? "active" : ""}`}
             onClick={() => setMenuOpen(false)}
           >
             Loyihalar

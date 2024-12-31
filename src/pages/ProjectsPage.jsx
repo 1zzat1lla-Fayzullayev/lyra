@@ -10,7 +10,7 @@ function ProjectsPage() {
       <div className="relative overflow-hidden">
         <div className="bg-neutral-950 text-neutral-50 h-screen flex flex-col justify-center items-center p-6 text-center">
           <h1 className="text-center text-3xl md:text-6xl font-black text-neutral-50">
-            Siz uchun yaratilgan loyihalarimiz bilan tanishing!
+            Loyihalar bilan tanishing✨
           </h1>
           <FuzzyOverlay />
         </div>
