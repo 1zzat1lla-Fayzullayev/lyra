@@ -1,0 +1,32 @@
+export const orderData = [
+  {
+    level: "Basic",
+    price: "299",
+    info: "Oddiy va funksional sayt uchun ideal tanlov. Biz bilan sizning biznesingiz onlayn bo'ladi!",
+    list1: "Zamonaviy va minimalist dizayn",
+    list2: "Asosiy SEO optimizatsiya",
+    list3: "Mobil qurilmalar uchun moslashuvchan dizayn",
+    list4: "Bog'lanish formasi va xarita integratsiyasi",
+    list5: "2 haftada tayyor",
+  },
+  {
+    level: "Standard",
+    price: "499",
+    info: "Mukammal dizayn va keng imkoniyatlar. Sizning mijozlaringizga qulay interfeys yarating!",
+    list1: "Mukammal dizayn va interaktivlik",
+    list2: "O'rta darajadagi SEO optimizatsiya",
+    list3: "Mobil va planshetlar uchun 100% mos dizayn",
+    list4: "Interaktiv bog'lanish formasi va ijtimoiy tarmoqlar bilan integratsiya",
+    list5: "10 kun ichida tayyor",
+  },
+  {
+    level: "Pro",
+    price: "999",
+    info: "Eng yuqori darajadagi xizmatlar va eksklyuziv imkoniyatlar siz uchun. Brendingizni onlayn dunyoda yuqori cho'qqiga olib chiqing!",
+    list1: "Eksklyuziv dizayn va brendga moslashtirish",
+    list2: "To'liq SEO optimizatsiya",
+    list3: "Qidiruv tizimlarida yuqori reytingga erishish",
+    list4: "Qo'shimcha funksiyalar: blog, savdo maydoni va boshqalar",
+    list5: "1 hafta ichida tayyor",
+  },
+];
