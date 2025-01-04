@@ -57,16 +57,9 @@ export const ProjectsCard = ({projects, projectsApi}) => {
   const firstIndex = lastIndex - projectsPerPage;
   const currentData = projectsApi.slice(firstIndex, lastIndex);
 
-  // console.log(
-  //   "Bu oxrgi index va turgan sahifa * ekranga chiqishi kerak bo'lgan elementlar sonini ko'paytirganda xosil bo'ldi: ",
-  //   lastIndex
-  // );
-  // console.log("Bu chiqgan natijadan ekrandagi elementlar sonini ayriganda hosil bo'ldi: ", firstIndex);
-  // console.log(currentData);
-
   const totalProjects = Math.ceil(projectsApi.length / projectsPerPage);
 
-  // console.log("Bu umumiy projects arrayni ekrandagi elementlar soniga bo'lishdan hosil bo'ldi: ", totalProjects);
+
   const numArr = [];
   for (let i = 1; i <= totalProjects; i++) {
     numArr.push(i);

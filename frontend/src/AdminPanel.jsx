@@ -10,7 +10,7 @@ function AdminPanel() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3000/api/projects", {
+      await axios.post("https://lyra-backend.onrender.com/api/projects", {
         name: projectName,
         link: projectLink,
         image: projectImage,
